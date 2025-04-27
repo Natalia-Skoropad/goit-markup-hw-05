@@ -661,6 +661,7 @@ img {
 .modal-close-button:hover,
 .modal-close-button:focus {
   background-color: #404bbf;
+  border: none;
 }
 
 .modal-close-button:hover .icon-close-modal,
@@ -689,125 +690,106 @@ img {
 }
 
 .input-wrapper {
-  display: flex;
-  align-items: center;
-  padding: 8px 16px 8px 16px;
-  background-color: #fff;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
-  width: 100%;
-  height: 40px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
+.form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  padding-left: 38px;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:hover,
+.form-input:focus,
 .textarea-input:hover,
-.textarea-input:focus,
-.input-wrapper:hover,
-.input-wrapper:focus {
-  border: 1px solid #4d5ae5;
+.textarea-input:focus {
+  border-color: #4d5ae5;
 }
 
 .input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
   fill: #2e2f42;
+  transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input-wrapper:hover .input-icon,
-.input-wrapper:focus .input-icon {
+.input-icon:hover,
+.input-icon:focus {
   fill: #4d5ae5;
 }
 
-.input-wrapper input {
-  border: none;
-  outline: none;
-  flex: 1;
-  font-size: 16px;
-}
-
-.div-input-label {
-  margin-bottom: 8px;
-}
-
-.div-input-label {
-  margin-bottom: 8px;
+.textarea-wrapper {
+  margin-bottom: 16px;
 }
 
 .textarea-input {
-  resize: none;
-  border-radius: 4px;
   width: 100%;
   height: 120px;
-  padding: 8px 16px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
-}
-
-.textarea-input::placeholder {
-  font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
-}
-
-.custom-checkbox {
-  display: flex;
-  align-items: center;
-
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-
-  cursor: pointer;
-  user-select: none;
-}
-
-.custom-checkbox input {
-  display: none; /* ховаємо стандартний чекбокс */
-}
-
-.checkmark {
-  width: 16px;
-  height: 16px;
-  border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
-  margin-right: 8px;
-  position: relative;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border;
+  border-radius: 4px;
+  background-color: transparent;
+  padding: 8px 16px;
+  outline: transparent;
+  resize: none;
+  border-color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.custom-checkbox input:checked + .checkmark {
-  background-color: #404bbf;
-  border: #404bbf;
-}
-
-.custom-checkbox input:checked + .checkmark::after {
-  content: '';
-  position: absolute;
-  left: 5px;
-  top: 1px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-
-.custom-checkbox a {
-  color: #3f51b5;
-  text-decoration: underline;
-  margin-left: 4px;
+.div-input-label {
+  margin-bottom: 8px;
 }
 
 .div-checkbox {
   margin-bottom: 24px;
 }
 
+.custom-checkbox {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+.checkmark {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  background-color: 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  margin-right: 8px;
+}
+
+.checkbox-input:checked + .custom-checkbox > .checkmark {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
+
+.privacy-policy-link {
+  line-height: 1.33;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #4d5ae5;
+}
+
 .modal-form-button {
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
