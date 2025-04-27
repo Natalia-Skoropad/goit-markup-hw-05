@@ -712,6 +712,12 @@ img {
   fill: #4d5ae5;
 }
 
+.form-input:hover,
+.form-input:focus {
+  border-color: #4d5ae5;
+  fill: #4d5ae5;
+}
+
 .input-icon {
   position: absolute;
   left: 16px;
